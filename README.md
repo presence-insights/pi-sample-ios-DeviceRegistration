@@ -1,5 +1,6 @@
 #MobileFirst Platform - PI Device Registration 
-The purpose of this app is to show how to implement PI device registration for IOS using Swift.
+The purpose of this app is to show how to leverage PI SDK (device registration) for IOS(swift). This app demonstrates register/unregister with encrypted and unencrypted Data. At the start of the app, it will check to see if the device is already registered.
+
 
 ##Instructions
 You can use IOS device or XCode simulator to run this app.
