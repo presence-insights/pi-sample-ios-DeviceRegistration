@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		0F0D0DE81BDFEB24004DC4F0 /* PresenceInsightsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PresenceInsightsSDK.framework; sourceTree = "<group>"; };
-		0F0D0DEB1BDFEB24004DC4F0 /* pi-sample-ios-DeviceRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-sample-ios-DeviceRegistration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FB9E3331BE0024000EFBA74 /* pi-sample-ios-DeviceRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pi-sample-ios-DeviceRegistration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFAAB761B851AFD003B44FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FFAAB771B851AFD003B44FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FFAAB791B851AFD003B44FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 			children = (
 				0F0D0DE81BDFEB24004DC4F0 /* PresenceInsightsSDK.framework */,
 				0FFAAB741B851AFD003B44FF /* pi-sample-ios-DeviceRegistration */,
-				0FFAAB8A1B851AFD003B44FF /* PIDeviceRegistrationTests */,
-				0F0D0DEB1BDFEB24004DC4F0 /* pi-sample-ios-DeviceRegistration.app */,
+				0FFAAB8A1B851AFD003B44FF /* pi-sample-ios-DeviceRegistrationTest */,
+				0FB9E3331BE0024000EFBA74 /* pi-sample-ios-DeviceRegistration.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,8 +75,7 @@
 				0FFAAB801B851AFD003B44FF /* LaunchScreen.xib */,
 				0FFAAB751B851AFD003B44FF /* Supporting Files */,
 			);
-			name = "pi-sample-ios-DeviceRegistration";
-			path = PIDeviceRegistration;
+			path = "pi-sample-ios-DeviceRegistration";
 			sourceTree = "<group>";
 		};
 		0FFAAB751B851AFD003B44FF /* Supporting Files */ = {
@@ -87,13 +86,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0FFAAB8A1B851AFD003B44FF /* PIDeviceRegistrationTests */ = {
+		0FFAAB8A1B851AFD003B44FF /* pi-sample-ios-DeviceRegistrationTest */ = {
 			isa = PBXGroup;
 			children = (
 				0FFAAB8D1B851AFD003B44FF /* PIDeviceRegistrationTests.swift */,
 				0FFAAB8B1B851AFD003B44FF /* Supporting Files */,
 			);
-			path = PIDeviceRegistrationTests;
+			path = "pi-sample-ios-DeviceRegistrationTest";
 			sourceTree = "<group>";
 		};
 		0FFAAB8B1B851AFD003B44FF /* Supporting Files */ = {
@@ -122,7 +121,7 @@
 			);
 			name = "pi-sample-ios-DeviceRegistration";
 			productName = PIDeviceRegistration;
-			productReference = 0F0D0DEB1BDFEB24004DC4F0 /* pi-sample-ios-DeviceRegistration.app */;
+			productReference = 0FB9E3331BE0024000EFBA74 /* pi-sample-ios-DeviceRegistration.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -293,7 +292,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = PIDeviceRegistration/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/pi-sample-ios-DeviceRegistration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.$(PRODUCT_NAME:rfc1034identifier)";
@@ -309,7 +308,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = PIDeviceRegistration/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/pi-sample-ios-DeviceRegistration/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ibm.$(PRODUCT_NAME:rfc1034identifier)";
