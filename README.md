@@ -1,69 +1,45 @@
-#MobileFirst Platform - PI Device Registration 
-The purpose of this app is to show how to leverage PI SDK (device registration) for IOS(swift). This app demonstrates register/unregister with encrypted and unencrypted Data. At the start of the app, it will check to see if the device is already registered.
+# IBM Presence Insights Device Registration 
 
+The purpose of this application is to show how to leverage Presence Insights SDK (device registration) for IOS(swift). This application demonstrates how to register and unregister devices with encrypted and unencrypted data. When the application starts, it will check to see if the device is already registered.
 
-##Instructions
-You can use IOS device or XCode simulator to run this app.
+You can use the IOS device or XCode simulator to run this application.
+1. Open PIDeviceRegistration.xcodeproj.
+2. Edit the ViewController.swift file:
+   - Change the Bluemix credentials.
+   - Change the tenantID, orgID, username and password. 
+   Note that all of this information can be found in your Presence Insights Dashboard.
+3. Click **Play** to build and run the application.
 
-* Open PIDeviceRegistration.xcodeproj
-* Edit the file ViewController.swift
-	- change the bluemix credentials/information
-		- tenantID, orgID, username and password (all this information can be found in your Presence Insights Dashboard)
+The ViewController.swift appliction is a great way to see how objects are initialized and implemented. The application will perform an initial check to see if the device is already registered. If the device is registered, it will alert the user and populate the device name and type.
 
-* Click the play button to build and run
+The sample application contains the following fields and options:
 
-
-##Quick Walkthrough
-ViewController.swift is a great way to see how objects were initialized and implemented. The app will do an initial check to see if the device is already registered. If the device is registered, it will alert the user and fill the Device name and type.
-
-On the sample app, There are 5 text fields, 1 selection, switch, and update button.
-
-* Device Name - Text Field
+**Device Name** - Text Field
 	- Type in the name you want to register the device as.
-* Device Type - Selection
+**Device Type** - Selection
 	- It grabs the device types so the user can select instead of having them type.
-* Encrypted Data Key - Text Field
+**Encrypted Data Key** - Text Field
 	- Encrypted Device Key value
-* Encrypted Data Value - Text Field
+**Encrypted Data Value** - Text Field
 	- Encrypted Device Data value
-* Unencrypted Data Key - Text Field
+**Unencrypted Data Key** - Text Field
     - Unencrypted Device Key value
-* Unencrypted Data Value - Text Field
+**Unencrypted Data Value** - Text Field
     - Unencrypted Device Data value
 	
-*note:* If Key or Value is empty, it will throw an error. Will pass if both exist or empty.
+**Note:** If Key or Value is empty, it will throw an error. Will pass if both exist or empty.
 
-* UI Switch
-	- When the switch is on, it registers the device.
-	- When the switch is off, it unregsiters the device. 
-* Update
-	- will check if the switch is on (regsitered)
-	- If the switch is on, it updates the device.
+**UI Switch**
+   - When the switch is set to **On**, it registers the device.
+   - When the switch is set to **Off**, it unregsiters the device. 
+**Update**
+  Checks to see if the switch is set to **On**. If so, the device has been regsitered and is updated.
 
-
-	
-	
-	
-	
-	
-	
 
 
 Copyright 2015 IBM Corp.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
 
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-
-
-
-
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
