@@ -30,9 +30,9 @@ The sample application contains the following fields and options:
 
 * **UI Switch**
    - When the switch is set to **On**, it registers the device.
-   - When the switch is set to **Off**, it unregsiters the device. 
+   - When the switch is set to **Off**, it unregisters the device. 
 * **Update**
-  Checks to see if the switch is set to **On**. If so, the device has been regsitered and is updated.
+  Checks to see if the switch is set to **On**. If so, the device is registered and updated.
 
 
 
