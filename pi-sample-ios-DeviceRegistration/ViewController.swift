@@ -20,6 +20,13 @@ import PresenceInsightsSDK
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    //hard coding the tenantID, orgID, username, password, baseURL
+    //This information can be found in your Presence Insights UI/Dashboard
+    let tenantID = ""
+    let orgID = ""
+    let username = ""
+    let passwd = ""
+    let baseURL = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //creating a PIAdapter object with bm information
         piAdapter = PIAdapter(tenant: tenantID,
             org: orgID,
+            baseURL: baseURL,
             username: username,
             password: passwd)
         //piAdapter.enableLogging()
@@ -43,7 +51,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         device = PIDevice(name: " ")
         piAdapter.getDeviceByDescriptor(device.descriptor) { (rdevice, NSError) -> () in
             if((rdevice.name?.isEmpty) == nil){
-                
             }
             else{
                 //using UI thread to make teh necessary changes.
@@ -66,12 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //hard coding the tenantID, orgID, username, password
-    //This information can be found in your Presence Insights UI/Dashboard
-    let tenantID = "XXXXXXXXX"
-    let orgID = "XXXXXXXXX"
-    let username = "XXXXXXXXX"
-    let passwd = "XXXXXXXXX"
+    
     
     //initializing piAdapter object and PIdevice
     var piAdapter : PIAdapter!
@@ -96,16 +98,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func DeviceTypeAction() {
         //gets org information
         piAdapter.getOrg { (org, NSError) -> () in
+            print(org.registrationTypes);
             //grab the different device types
             let Types = org.registrationTypes
+            print("TEST")
+            print(Types.count)
             //need this dispatch to change from backend thread to UI thread
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let alert = UIAlertController(title: "Select Device Type", message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 for Type in Types{
                     alert.addAction(UIAlertAction(title: "\(Type)", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction) in
                         self.deviceType.text = Type
+                        print(Type)
                     }))
                 }
+                alert.addAction(UIAlertAction(title: "cancel", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             })
 
