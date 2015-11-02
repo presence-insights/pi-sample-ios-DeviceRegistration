@@ -5,7 +5,7 @@ The purpose of this application is to show how to leverage Presence Insights SDK
 You can use the IOS device or XCode simulator to run this application.
 
 1. Open PIDeviceRegistration.xcodeproj.
-2. Edit the ViewController.swift file and update the Bluemix credentials, tenantID, orgID, username, and password. 
+2. Edit the ViewController.swift file and update the Bluemix credentials, tenantID, orgID, baseURL, username, and password. 
 Note that all of this information can be found in your Presence Insights Dashboard.
 3. Click **Play** to build and run the application.
 
