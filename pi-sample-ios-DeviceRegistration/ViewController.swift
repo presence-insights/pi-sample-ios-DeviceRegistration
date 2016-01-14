@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //initializing piAdapter object and PIdevice
     var piAdapter : PIAdapter!
     var device : PIDevice!
-
+    
     
     @IBOutlet weak var deviceName: UITextField!
     @IBOutlet weak var datakey: UITextField!
@@ -86,14 +86,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var unencryptedDataKey: UITextField!
     @IBOutlet weak var unencryptedDataValue: UITextField!
     @IBOutlet weak var deviceType: UITextField!
-
+    
     
     //pop up alert and display BM information
     @IBAction func bmAction(sender: UIButton) {
         alert("BM Information", messageInput: "Username: \(username) \n Password: \(passwd) \n Tenant ID: \(tenantID) \n Org ID: \(orgID)")
-       
+        
     }
-
+    
     //UI selection for which device Type exist in the user's PI
     @IBAction func DeviceTypeAction() {
         //gets org information
@@ -115,21 +115,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 alert.addAction(UIAlertAction(title: "cancel", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             })
-
+            
         }
         
     }
     
-
+    
     
     //Update action
     @IBAction func Action(sender: UIButton) {
         //adding device name to the device object
         device = PIDevice(name: deviceName.text!)
         device.type = deviceType.text
-
         
-        //adding device type to the device object. 
+        
+        //adding device type to the device object.
         //NOTE: the type has to exist in the Presence Insights. Default types are : "Internal" and "External"
         
         //method to add encrypted data
@@ -139,21 +139,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if( MissingText(datavalue, key: datakey) ==  false){
             device.addToDataObject(datavalue.text!, key: datakey.text!)
         }
-        else{
-            //RegisterSwitch.setOn(false, animated: true)
-            alert("Error", messageInput: "Check your Encrypted Data Key and Value Fields")
-        }
-
         
         //checks to see if key or value is empty and throw error as necessary for unencrypted data
         if( MissingText(unencryptedDataValue, key: unencryptedDataKey) ==  false){
             device.addToUnencryptedDataObject(unencryptedDataValue.text!, key: unencryptedDataKey.text!)
         }
-        else{
-            //RegisterSwitch.setOn(false, animated: true)
-            alert("Error", messageInput: "Check your Unencrypted Data Key and Value Fields")
-        }
-        
         
         
         //when the user flicks the switch to green
@@ -173,7 +163,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 })
             })
-
+            
             
             
         }
@@ -194,33 +184,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Register Switch Action
     @IBAction func switchAction(sender: AnyObject) {
         
-
+        
         //adding device name to the device object
         device = PIDevice(name: deviceName.text!)
         device.type = deviceType.text
-
+        
         
         //adding device type to the device object.
         //NOTE: the type has to exist in the Presence Insights. Default types are : "Internal" and "External"
         
-        //checks to see if key or value is empty and throw error as necessary
+        //checks to see if key or value is empty
         if( MissingText(datavalue, key: datakey) ==  false){
             device.addToDataObject(datavalue.text!, key: datakey.text!)
         }
-        else{
-            RegisterSwitch.setOn(false, animated: true)
-            alert("Error", messageInput: "Check your Encrypted Data Key and Value Fields")
-        }
         
-
-        
-        //checks to see if key or value is empty and throw error as necessary for unencrypted data
+        //        checks to see if key or value is empty
         if( MissingText(unencryptedDataValue, key: unencryptedDataKey) ==  false){
             device.addToUnencryptedDataObject(unencryptedDataValue.text!, key: unencryptedDataKey.text!)
-        }
-        else{
-            RegisterSwitch.setOn(false, animated: true)
-            alert("Error", messageInput: "Check your Unencrypted Data Key and Value Fields")
         }
         
         
@@ -262,22 +242,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
-
+        
     }
     
     //function to check if both or none of the data value and key exist.
     func MissingText (value: UITextField, key : UITextField) -> Bool{
-        if (key.text!.isEmpty && value.text!.isEmpty){
-            return false
-        }
-        else if (key.text!.isEmpty || value.text!.isEmpty){
+        if ( (key.text! == "" && value.text! == "")){
+            print("here")
             return true
         }
         else{
+            print("test")
             return false
         }
-
+        
     }
+
     
 
     
